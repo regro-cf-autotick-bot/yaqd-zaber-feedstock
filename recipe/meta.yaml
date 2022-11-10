@@ -1,5 +1,5 @@
 {% set name = "yaqd-zaber" %}
-{% set version = "2021.10.0" %}
+{% set version = "2022.11.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/yaqd-zaber-{{ version }}.tar.gz
-  sha256: 6bc4ea1425e2b67f7e28495cc1795e8a5bbb245dae232fa96fcd5384145bde9f
+  sha256: 4b8972db281adf8c4da6c0557effac254e7aa512b3f62d6ddbb659ebb11dad6d
 
 build:
   entry_points:
