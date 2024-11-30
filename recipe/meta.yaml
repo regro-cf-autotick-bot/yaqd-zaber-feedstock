@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/yaqd-zaber-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/yaqd-zaber-{{ version }}.tar.gz
   sha256: 6bc4ea1425e2b67f7e28495cc1795e8a5bbb245dae232fa96fcd5384145bde9f
 
 build:
@@ -14,15 +14,15 @@ build:
     - yaqd-zaber-binary = yaqd_zaber._zaber_binary:ZaberBinary.main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
     - flit-core >=2,<4
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - zaber-serial
     - yaqd-core >=2020.06.3
 
@@ -34,6 +34,7 @@ test:
     - yaqd-zaber-binary --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://yaq.fyi
